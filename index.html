@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog-app</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- <script>
+      (function() {
+        const origAddEventListener = EventTarget.prototype.addEventListener;
+        EventTarget.prototype.addEventListener = function(type, listener, options) {
+          const passiveEvents = ['touchstart', 'touchmove', 'wheel', 'scroll'];
+          if (passiveEvents.includes(type)) {
+            if (typeof options === 'object') {
+              options.passive = true;
+            } else {
+              options = { passive: true };
+            }
+          }
+          origAddEventListener.call(this, type, listener, options);
+        };
+      })();
+    </script>
+
+    <script src="/path/to/theme.min.js" defer></script> -->
+
+    <!-- Your React app -->
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
