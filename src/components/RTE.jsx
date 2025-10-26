@@ -12,15 +12,15 @@ export default function RTE({ name = "content", control, label, defaultValue = "
         control={control}
         render={({ field: { onChange, value } }) => (
           <Editor
-            tinymceScriptSrc="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+            tinymceScriptSrc="https://cdn.tiny.cloud/1/fey8817utzhq5g6w97200be93hql8qx7gum8fg2o66iojsre/tinymce/6/tinymce.min.js"
             value={value || defaultValue}
             init={{
               height: 500,
               menubar: true,
               plugins: [
-                "advlist autolink lists link image charmap preview anchor",
-                "searchreplace visualblocks code fullscreen",
-                "insertdatetime media table paste help wordcount",
+                "advlist", "autolink", "lists", "link", "image", "charmap", "preview",
+                "anchor", "searchreplace", "visualblocks", "code", "fullscreen",
+                "insertdatetime", "media", "table", "paste", "help", "wordcount"
               ],
               toolbar:
                 "undo redo | formatselect | bold italic forecolor | " +
