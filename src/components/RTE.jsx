@@ -1,38 +1,49 @@
-import React from "react";
-import { Editor } from "@tinymce/tinymce-react";
+// RTE.jsx
+import React, { useEffect } from "react";
 import { Controller } from "react-hook-form";
+import { useEditor, EditorContent } from "@tiptap/react";
+import StarterKit from "@tiptap/starter-kit";
+import { Image } from "@tiptap/extension-image";
+import { Table, TableRow, TableCell, TableHeader } from "@tiptap/extension-table";
+import "prosemirror-view/style/prosemirror.css";
 
 export default function RTE({ name = "content", control, label, defaultValue = "" }) {
+  const editor = useEditor({
+    extensions: [
+      StarterKit.configure({ link: false }),
+      Image,
+      Table.configure({ resizable: true }),
+      TableRow,
+      TableCell,
+      TableHeader,
+    ],
+    content: defaultValue,
+    autofocus: true,
+  });
+
   return (
     <div className="w-full">
       {label && <label className="inline-block mb-1 pl-1">{label}</label>}
 
-      <Controller
-        name={name}
-        control={control}
-        render={({ field: { onChange, value } }) => (
-          <Editor
-            tinymceScriptSrc="https://cdn.tiny.cloud/1/fey8817utzhq5g6w97200be93hql8qx7gum8fg2o66iojsre/tinymce/6/tinymce.min.js"
-            value={value || defaultValue}
-            init={{
-              height: 500,
-              menubar: true,
-              plugins: [
-                "advlist", "autolink", "lists", "link", "image", "charmap", "preview",
-                "anchor", "searchreplace", "visualblocks", "code", "fullscreen",
-                "insertdatetime", "media", "table", "paste", "help", "wordcount"
-              ],
-              toolbar:
-                "undo redo | formatselect | bold italic forecolor | " +
-                "alignleft aligncenter alignright alignjustify | " +
-                "bullist numlist outdent indent | removeformat | help",
-              content_style:
-                "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
-            }}
-            onEditorChange={onChange}
-          />
-        )}
-      />
+      {editor && (
+        <Controller
+          name={name}
+          control={control}
+          defaultValue={defaultValue}
+          render={({ field: { onChange } }) => {
+            useEffect(() => {
+              if (!editor) return;
+
+              const handleUpdate = () => onChange(editor.getHTML());
+
+              editor.on("update", handleUpdate);
+              return () => editor.off("update", handleUpdate);
+            }, [editor, onChange]);
+
+            return <EditorContent editor={editor} className="border rounded p-2 min-h-[300px]" />;
+          }}
+        />
+      )}
     </div>
   );
 }
