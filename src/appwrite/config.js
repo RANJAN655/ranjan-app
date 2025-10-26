@@ -130,6 +130,16 @@ export class Service{
             fileId
         )
     }
+
+    getFileDownload(fileId) { 
+    return this.bucket.getFileDownload(
+        conf.appwriteBucketId,
+        fileId
+    );
+}
+
+
+
 }
 
 
