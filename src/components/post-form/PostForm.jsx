@@ -103,7 +103,7 @@ export default function PostForm({ post }) {
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)+ "&mode=admin"}
+                            src={appwriteService.getFileView(post.featuredImage)+ "&mode=admin"}
                             alt={post.title}
                             className="rounded-lg"
                         />
