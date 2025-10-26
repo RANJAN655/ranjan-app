@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Button, Input, RTE, Select } from "../index.js";
+import { Button, Input, RTE, Select } from "..";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -103,7 +103,7 @@ export default function PostForm({ post }) {
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFileView(post.featuredImage)+ "&mode=admin"}
+                            src={appwriteService.getFilePreview(post.featuredImage)+ "&mode=admin"}
                             alt={post.title}
                             className="rounded-lg"
                         />
