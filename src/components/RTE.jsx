@@ -12,6 +12,7 @@ export default function RTE({ name = "content", control, label, defaultValue = "
         control={control}
         render={({ field: { onChange, value } }) => (
           <Editor
+          
             apiKey="fey8817utzhq5g6w97200be93hql8qx7gum8fg2o66iojsre" // Cloud TinyMCE key
             value={value || defaultValue}
             init={{
