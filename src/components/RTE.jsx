@@ -2,6 +2,19 @@ import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Controller } from "react-hook-form";
 
+import "tinymce/tinymce";
+import "tinymce/icons/default";
+import "tinymce/themes/silver";
+import "tinymce/plugins/advlist";
+import "tinymce/plugins/autolink";
+import "tinymce/plugins/lists";
+import "tinymce/plugins/link";
+import "tinymce/plugins/image";
+import "tinymce/plugins/charmap";
+import "tinymce/plugins/preview";
+import "tinymce/plugins/code";
+import "tinymce/plugins/table";
+
 export default function RTE({ name = "content", control, label, defaultValue = "" }) {
   return (
     <div className="w-full">
@@ -12,8 +25,6 @@ export default function RTE({ name = "content", control, label, defaultValue = "
         control={control}
         render={({ field: { onChange, value } }) => (
           <Editor
-          
-            apiKey="fey8817utzhq5g6w97200be93hql8qx7gum8fg2o66iojsre" // Cloud TinyMCE key
             value={value || defaultValue}
             init={{
               height: 500,

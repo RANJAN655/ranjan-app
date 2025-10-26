@@ -1,18 +1,5 @@
-import 'tinymce/tinymce';
-import 'tinymce/icons/default';
-import 'tinymce/themes/silver';
-import 'tinymce/plugins/advlist';
-import 'tinymce/plugins/autolink';
-import 'tinymce/plugins/lists';
-import 'tinymce/plugins/link';
-import 'tinymce/plugins/image';
-import 'tinymce/plugins/charmap';
-import 'tinymce/plugins/preview';
-import 'tinymce/plugins/code';
-import 'tinymce/plugins/table';
-
 import React from 'react'
-import ReactDOM from 'react-dom/client' 
+import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { Provider } from 'react-redux'
