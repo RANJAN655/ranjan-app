@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-regular-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/react-fontawesome": "^3.1.0",
     "@reduxjs/toolkit": "^2.9.2",
     "@tailwindcss/vite": "^4.1.16",
     "@tinymce/tinymce-react": "^6.3.0",
@@ -27,6 +32,7 @@
     "react-quill": "^2.0.0",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.9.4",
+    "redux-persist": "^6.0.0",
     "tailwindcss": "^4.1.16",
     "tinymce": "^8.2.0"
   },

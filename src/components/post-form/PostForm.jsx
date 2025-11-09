@@ -19,6 +19,8 @@ export default function PostForm({ post }) {
 
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
+    console.log("problrm",userData);
+    
 
     const submit = async (data) => {
         if (submitting) return; // prevent multiple submissions
